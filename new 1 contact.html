@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me - Nour Al-Huda Daqamseh</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- القائمة البسيطة للتنقل -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="contact.html" class="active">Contact Me</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <h1>Contact Me</h1>
+        <p class="subtitle">Have a question or want to connect? Send me a message below.</p>
+    </header>
+
+    <main class="container">
+        <section class="card form-card">
+            <form id="contactForm" onsubmit="validateForm(event)">
+                <div class="form-group">
+                    <label for="fullName">Full Name:</label>
+                    <input type="text" id="fullName" name="fullName" placeholder="Enter your full name">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email">
+                </div>
+
+                <div class="form-group">
+                    <label for="country">Country:</label>
+                    <input type="text" id="country" name="country" placeholder="Enter your country">
+                </div>
+
+                <div class="form-group">
+                    <label for="comments">Comments / Message:</label>
+                    <textarea id="comments" name="comments" rows="4" placeholder="Write your comments here..."></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">Submit</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Nour Al-Huda Daqamseh. All Rights Reserved.</p>
+    </footer>
+
+    <!-- كود JavaScript للتحقق من الحقول -->
+    <script>
+        function validateForm(event) {
+            event.preventDefault();
+
+            const fullName = document.getElementById('fullName').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const country = document.getElementById('country').value.trim();
+            const comments = document.getElementById('comments').value.trim();
+
+            if (fullName === "" || email === "" || country === "" || comments === "") {
+                alert("Please fill in all fields before submitting the form.");
+                return false;
+            }
+
+            alert("Form submitted successfully!");
+            document.getElementById('contactForm').reset();
+        }
+    </script>
+
+</body>
+</html>
+
